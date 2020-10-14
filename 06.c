@@ -6,12 +6,13 @@ int main()
 {
     int arr[10];
     int i;
+    srand(time(NULL));
+
     for (i = 0; i < 9; i++)
     {
-        srand(time(NULL) + i);
         arr[i] = rand();
     }
-    arr[9] = 0;
+    arr[i] = 0;
 
     for (i = 0; i < 10; i++)
     {
@@ -22,7 +23,8 @@ int main()
     int second_arr[10];
 
     int *value = arr;
-    value += 9;
+    value += sizeof(arr) / sizeof(int);
+    value--;
 
     int *second_value = second_arr;
 
